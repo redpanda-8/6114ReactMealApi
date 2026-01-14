@@ -16,25 +16,27 @@ const Search =()=>{
         navigate(`/search?q=${encodeURIComponent(finalQuery)}&type=${searchType}`);
     };
     return(
-        <form className="search-form" onSubmit={handleSubmit}>
+        <form className="mt-4" onSubmit={handleSubmit} aria-label="Search meals form">
             <label className="sr-only" htmlFor="searchInput">Search meals</label>
 
-            <div className="search-row">
+            <div className="d-flex gap-2 flex-wrap align-items-center">
                 <input
-                 id="searchInput"
-                 type="text"
-                 className="form-input"
-                 placeholder="Search meals..."
-                 value={query}
-                 onChange={(e) => setQuery(e.target.value)}
+                    id="searchInput"
+                    type="text"
+                    className="form-control"
+                    style={{ maxWidth: "520px" }}
+                    placeholder="Search meals..."
+                    value={query}
+                    onChange={(e) => setQuery(e.target.value)}
                 />
-            
+
                 <label className="sr-only" htmlFor="searchType">Search type</label>
-                <select 
-                  id="searchType"
-                  className="form-select"
-                  value={searchType}
-                  onChange={(e) => setSearchType(e.target.value)}
+                <select
+                    id="searchType"
+                    className="form-select"
+                    style={{ maxWidth: "200px" }}
+                    value={searchType}
+                    onChange={(e) => setSearchType(e.target.value)}
                 >
                     <option value="name">Name</option>
                     <option value="ingredient">Ingredient</option>
@@ -43,14 +45,20 @@ const Search =()=>{
                     <option value="firstLetter">First letter</option>
                 </select>
 
-                <button className="btn" type="submit" aria-label="Search meals">Search</button>
-                <button className="btn btn-ghost" type="submit" 
-                  onClick={() => navigate("/random")} 
-                  aria-label="Open random meal">Random meal</button>
-                {/* <a className="btn btn-ghost" href="/random">Random meal</a> */}
+                <button className="btn btn-warning" type="submit" aria-label="Search meals">Search</button>
+
+                <button
+                className="btn btn-light"
+                type="button"
+                onClick={() => navigate("/random")}
+                aria-label="Open random meal"
+                >
+                Random meal
+                </button>
             </div>
-            {error.show && <div className="error">{error.msg}</div>}
-        </form>
+
+            {error.show && <div className="text-danger mt-2">{error.msg}</div>}
+    </form>
     );
 };
 export default Search;

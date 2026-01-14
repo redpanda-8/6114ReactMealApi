@@ -27,14 +27,13 @@ Detalės pagal ID
 https://www.themealdb.com/api/json/v1/1/lookup.php?i=52772
 Random
 https://www.themealdb.com/api/json/v1/1/random.php
-Filtrai
+Filtrai:
 ingredient: https://www.themealdb.com/api/json/v1/1/filter.php?i=chicken_breast
 category: https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood
 area: https://www.themealdb.com/api/json/v1/1/filter.php?a=Canadian
 Vaizdai-Naudoti API grąžinamus image URL.
 
-3. React architektūra:
-Routing (rekomenduojama su react-router-dom)
+3. React architektūra: Routing (rekomenduojama su react-router-dom)
 Minimalūs route’ai:
 / – Home
 /search – Search results (su query parametrais, pvz. ?q=chicken&type=name)
@@ -60,5 +59,8 @@ Jei API grąžina meals: null → rodyti “No meals found”.
 Network error → rodyti “Something went wrong”.
 Loading būsena (spinner / skeleton).
 
-Bootstrap buvo naudojamas kaip UI pagalbinė biblioteka (grid, responsive layout, spacing), o visa aplikacijos logika, API integracija, 
-routing ir state management yra įgyvendinti savarankiškai su React.
+Bootstrap naudojamas kaip UI pagalbinė biblioteka (grid, responsive layout, spacing), o visa aplikacijos logika, API integracija, routing ir state management įgyvendinti su React.
+
+JSX <img>      | `import img from "..."; src={img}`
+CSS background | inline `style={{ backgroundImage: \`url(${img})` }}`
+`public/`      | tik jei nori naudoti be import (bet mes to nedarom)

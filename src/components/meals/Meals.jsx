@@ -1,7 +1,8 @@
-//Search results puslapis
-//skaito query params ?q=...&type=, kviečia context setQuery / setSearchType, rodo korteles(/meal:null), loading/err
-//ieskant pagal ingredient/category/area, MEALAPI return tik: idMeal, strMeal, strMealThumb
-// TDL NEBUS strCategory ir strArea, TDL Meals.jsx - vietoj info
+//SEARCH RESULTS LIST Rodo VISA sarasa rezultatu (korteles).
+//skaito query params ?q=...&type=, Paduoda i context setQuery(q) / setSearchType(type), rodo korteles(/meal:null), loading/err
+//is context pasiima: meals, loading, error. ieskant pagal ingredient/category/area, MEALAPI return tik: idMeal, strMeal, strMealThumb
+//renderina korteliu grid ir linkina i /meal/:id
+
 import { Link, useSearchParams } from "react-router-dom";
 import { useEffect } from "react";
 import { useGlobalContext } from "../../context.jsx";

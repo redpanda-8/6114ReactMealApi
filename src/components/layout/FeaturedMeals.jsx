@@ -16,6 +16,8 @@ const FeaturedMeals =()=> {
     const meal = meals?.[0];
     if(!meal) return null;
 
+    const featured = Array.from({ length: 6 }, () => meal);
+
     return(
         <section className="container pb-5">
             <div className="d-flex align-items-end justify-content-between flex-wrap gap-3 mb-3">
@@ -23,24 +25,31 @@ const FeaturedMeals =()=> {
                     <h2 className="fw-bold mb-1">Discover, Create, Share</h2>
                     <p className="text-secondary mb-0">Check our most popular recipes of this week</p>
                 </div>
-                <Link to="/search?q=chicken&type=name" className="btn btn-warning" aria-label="See all recipes"> See All </Link>
+                <Link className="btn btn-brand" aria-label="See all recipes">See All</Link>
             </div>
 
             <div className="row g-4">
-                <div className="col-12 col-sm-6 col-lg-4">
-                    <Link to={`/meal/${meal.idMeal}`} className="text-decoration-none">
-                        <article className="card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
-                            <img src={meal.strMealThumb} className="card-img-top" alt={meal.strMeal}  />
-                            <div className="card-body">
-                                <h5 className="card-title fw-bold">{meal.strMeal}</h5>
-                                <p className="card-text text-secondary mb-0">
-                                    {meal.strCategory} • {meal.strArea}
-                                </p>
-                            </div>
+                {featured.map((m, idx) => (
+                    <div className="col-12 col-sm-6 col-lg-4" key={idx}>
+                    <Link to={`/meal/${m.idMeal}`} className="text-decoration-none">
+                        <article className="card h-100 shadow-sm rounded-4 overflow-hidden">
+                        <img
+                            src={m.strMealThumb}
+                            className="card-img-top"
+                            alt={m.strMeal}
+                            style={{ height: "200px", objectFit: "cover" }}
+                        />
+                        <div className="card-body">
+                            <h5 className="card-title fw-bold">{m.strMeal}</h5>
+                            <p className="card-text text-secondary mb-0">
+                            {m.strCategory} • {m.strArea}
+                            </p>
+                        </div>
                         </article>
                     </Link>
+                    </div>
+                ))}
                 </div>
-            </div>
         </section>
     );
 };

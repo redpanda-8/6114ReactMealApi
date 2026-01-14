@@ -1,3 +1,6 @@
+// DETAILS PAGE - vieno meal detaliu puslapis
+// Skaito :id is URL per useParams(). Kviecia endpoint lookup.php?i=ID. Rodo viena didele detale: ingredientai, instrukcijos, tags ir t.t.
+
 //useParams() pasiima id,  kviečia lookup.php?i=...,  rodo ingredientus + kiekius + instructions + tags
 import { useParams, Link } from "react-router-dom";
 import getMeal from "../../services/getMeal.js";

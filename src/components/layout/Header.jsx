@@ -15,6 +15,7 @@ po header:
 // korteles: <article> ir visa kortele clickable su <Link></Link>
 
 import {Link, NavLink} from "react-router-dom";
+import heroImg from "../../img/heromeal.png";
 
 const Header =()=> {
     return(
@@ -22,14 +23,16 @@ const Header =()=> {
             <nav className="navbar navbar-expand-lg bg-white">
                 <div className="container">
                     <Link to="/" className="navbar-brand fw-bold">Recipedia</Link>
-
-                    <div className="d-flex align-items-center gap-3 ms-auto">
+                    <div className="d-flex gap-5">
                         <NavLink to="/" className="nav-link">Home</NavLink>
                         <NavLink to="/search?q=chicken&type=name" className="nav-link">Recipe</NavLink>
                         <a className="nav-link" href="#community">Community</a>
                         <a className="nav-link" href="#about">About Us</a>
-                        <Link to="/search?q=chicken&type=name" className="btn btn-light" aria-label="Search page">🔍</Link>
-                        <button className="btn btn-light" type="button" aria-label="User profile">👤</button>
+                    </div>
+                    
+                    <div className="d-flex gap-2 ms-5">
+                        <Link className="btn btn-light">🔍</Link>
+                        <button className="btn btn-light">👤</button>
                     </div>
                 </div>
             </nav>
@@ -40,13 +43,14 @@ const Header =()=> {
                         <h1 className="display-4 fw-bold">Cooking Made Fun and Easy: Unleash Your Inner Chef</h1>
                         <p className="text-secondary mt-3">Discover more than 10,000 recipes in your hand with the best recipe. Help you to find the easiest way to cook.</p>
                         <div className="d-flex gap-3 mt-4">
-                            <Link to="/search?q=chicken&type=name" className="btn btn-warning px-4 py-2" aria-label="Explore recipes">Explore Recipes</Link>
+                            <Link to="/search?q=chicken&type=name" className="btn btn-brand" aria-label="Explore recipes">Explore Recipes</Link>
                         </div>
                     </div>
 
                     <div className="col-12 col-lg-6">
-                        {/* kol kas placeholder — vėliau įdėsim tikrą hero image + comment cards */}
-                        <div className="hero-image-placeholder rounded-4 border bg-light"></div>
+                        <div className="hero-image-wrapper position-relative">
+                            <img src={heroImg} alt="Healthy meal with avocado and egg" className="hero-img"/>
+                        </div>
                     </div>
                 </div>
             </section>
