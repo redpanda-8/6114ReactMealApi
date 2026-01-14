@@ -3,7 +3,7 @@ import getMeal from "../../services/getMeal.js";
 
 const Random = () => {
     const { isLoading, error, data } = getMeal("/random.php");
-    if (isLoading) return <div className="loading"></div>;
+    if (isLoading) return <div className="loading"></div>; //for spinner
 
     if (error.show) {
         return (

@@ -1,26 +1,22 @@
 //Search results puslapis
 //skaito query params ?q=...&type=, kviečia context setQuery / setSearchType, rodo korteles(/meal:null), loading/err
-
-
 //ieskant pagal ingredient/category/area, MEALAPI return tik: idMeal, strMeal, strMealThumb
 // TDL NEBUS strCategory ir strArea, TDL Meals.jsx - vietoj info
-
 import { Link, useSearchParams } from "react-router-dom";
 import { useEffect } from "react";
 import { useGlobalContext } from "../../context.jsx";
-
+//Routes /search element={<Meals>} mechanizmas ?q=chicken&type=name
 const Meals =()=> {
     const [params] =useSearchParams();
     const q =params.get("q") || "";
     const type =params.get("type") || "name";
 
     const{meals, isLoadingMeals, mealsError, setQuery, setSearchType} =useGlobalContext();
-    //bus stebuklas jeigu cia veiks kazkas -_-
     useEffect(()=>{
         setQuery(q);
         setSearchType(type);
     }, [q, type]);
-
+    //for spinner - show kol laukiam api
     if(isLoadingMeals) return <div className="loading"></div>;
     
     if(mealsError.show){
@@ -51,7 +47,6 @@ const Meals =()=> {
 
                   // kai ateina is filter.php — no category/area, tai “info” kaip empty
                   const info = [m.strCategory, m.strArea].filter(Boolean).join("...");
-                  //velniop visa sita -_-
                   return(
                     <Link to={`/meal/${id}`} key={id} className="card-link">
                         <article className="card">

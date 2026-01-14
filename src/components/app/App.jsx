@@ -15,3 +15,7 @@ function App() {
   );
 }
 export default App;
+
+// path="/search" element={<Meals/>} - paima params is meals/Meals.jsx  10-12 eilutes
+// path="/meal/:id" element={<Meal/>} - paima id is meal/Meal.jsx - const { id } = useParams();
+// path="/random" element={<Random/>} - is Search.jsx per navigate("/random")/<Link to="/random">Random</Link>

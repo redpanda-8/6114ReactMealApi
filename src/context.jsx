@@ -1,29 +1,9 @@
-// import React, {useContext, useState} from "react";
-// import getMovie from "./services/getMovie.js";
-// const AppContext = React.createContext();
-// const AppProvider = ({children}) =>{
-//     const [query, setQuery] = useState("matrix");
-//     const {isLoading, error, data: movies} = getMovie(`&s=${query}`)
-//     return(
-//         <AppContext value={{isLoading, error,movies,query, setQuery}}>
-//             {children}
-//         </AppContext>
-//     )
-// }
-// export const useGlobalContext = ()=>{
-//     return useContext(AppContext)
-// }
-// export {AppContext, AppProvider};
-
 import React, { useContext, useState } from "react";
 import getMeal from "./services/getMeal.js";
 import getCategories from "./services/getCategories.js";
 //context objektas (VIDINIS)
 const Context = React.createContext();
-//AppContext kaip "wrapper" komponentas kad rašyti <AppContext value={...}>{children}</AppContext>
-// const AppProvider = ({ children }) => {
-//     const [query, setQuery] = useState("");
-//     const [searchType, setSearchType] = useState("name");
+//wrapper kad rasyti <AppContext value=...>
 const AppContext = ({ value, children }) => {
   return <Context.Provider value={value}>{children}</Context.Provider>;
 };
@@ -31,29 +11,49 @@ const AppContext = ({ value, children }) => {
 const AppProvider = ({ children }) => {
   const [query, setQuery] = useState("");
   const [searchType, setSearchType] = useState("name");
-
-    // categories
+    //categories(tik navui)
     const {
         isLoading: isLoadingCategories,
         error: categoriesError,
         data: categories,
     } = getCategories();
+    // ENDPOINT MAPPING ----------------------- TEST1
+    //meals endpoint pagal type
+    const buildEndpoint = (type, q) => {
+        const text = (q || "").trim();
 
-    // meals endpoint pagal type
-    let endpoint = "/search.php?s="; // default (empty)
-    const q = query.trim();
-    //nafik sita sh confusing cia viskas, bug'u lendas :D uzkniso jau
-    if (q) {
-        if (searchType === "name") endpoint = `/search.php?s=${encodeURIComponent(q)}`;
-        if (searchType === "firstLetter") endpoint = `/search.php?f=${encodeURIComponent(q[0] || "")}`;
-        if (searchType === "ingredient") endpoint = `/filter.php?i=${encodeURIComponent(q)}`;
-        if (searchType === "category") endpoint = `/filter.php?c=${encodeURIComponent(q)}`;
-        if (searchType === "area") endpoint = `/filter.php?a=${encodeURIComponent(q)}`;
-    } else {
-        //kad nerodytu klaidos empty query search
-        endpoint = `/search.php?s=`;
-    }
+        // jeigu empty query -> nieko nefetchinam (kad nebunu "No meals found" be reikalo)
+        if (!text) return null;
 
+        if (type === "name") {
+        // https://www.themealdb.com/api/json/v1/1/search.php?s=Arrabiata
+            return `/search.php?s=${encodeURIComponent(text)}`;
+        }
+        if (type === "firstLetter") {
+        // https://www.themealdb.com/api/json/v1/1/search.php?f=a
+        const first = text[0] || "";
+            return `/search.php?f=${encodeURIComponent(first)}`;
+        }
+        if (type === "ingredient") {
+        // https://www.themealdb.com/api/json/v1/1/filter.php?i=chicken_breast
+            return `/filter.php?i=${encodeURIComponent(text)}`;
+        }
+
+        if (type === "category") {
+        // https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood
+            return `/filter.php?c=${encodeURIComponent(text)}`;
+        }
+
+        if (type === "area") {
+        // https://www.themealdb.com/api/json/v1/1/filter.php?a=Canadian
+            return `/filter.php?a=${encodeURIComponent(text)}`;
+        }
+
+        // default fallback
+        return `/search.php?s=${encodeURIComponent(text)}`;
+    };
+    const endpoint = buildEndpoint(searchType, query);
+    //meals pagal endpoint (jei endpoint=null - nieko nefetchinam)
     const { isLoading: isLoadingMeals, error: mealsError, data: meals } = getMeal(endpoint);
 
     const error = mealsError || { show: false, msg: "" };

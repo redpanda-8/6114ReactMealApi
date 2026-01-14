@@ -3,7 +3,8 @@ Tikslas-Sukurti React aplikaciją, kuri leidžia ieškoti patiekalų (meals) per
 UI turi atitikti pateiktą Figma dizainą, būti modernus, responsyvus ir su tvarkinga komponentų/ modulių struktūra.
 Figma dizainas:
 https://www.figma.com/design/EClchxUSyjjjZWlT3TGo6I/Recipedia---Landing-Page--Community-?node-id=0-1&t=2oPSu4lmQqp56o9T-1
-Funkcionalumas (React)
+
+1. Funkcionalumas (React)
 1) Pagrindinis puslapis (Home)
 Viršuje search bar (paieška pagal: pavadinimą, ingredientą arba kategoriją).
 Rodomas kategorijų sąrašas (navigacijai / greitam pasirinkimui).
@@ -17,8 +18,7 @@ Rodyti: didelė nuotrauka, ingredientų sąrašas (su kiekiais), instrukcijos, c
 4) Random Meal sekcija / puslapis
 Mygtukas “Random meal” Paspaudus – užkrauna atsitiktinį patiekalą (galima rodyti kaip kortelę).
  
-TheMealDB API reikalavimai:
-Endpoint’ai
+2. TheMealDB API reikalavimai: Endpoint’ai:
 Paieška pagal pavadinimą
 https://www.themealdb.com/api/json/v1/1/search.php?s=Arrabiata
 Pagal pirmą raidę
@@ -32,7 +32,8 @@ ingredient: https://www.themealdb.com/api/json/v1/1/filter.php?i=chicken_breast
 category: https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood
 area: https://www.themealdb.com/api/json/v1/1/filter.php?a=Canadian
 Vaizdai-Naudoti API grąžinamus image URL.
-React architektūra:
+
+3. React architektūra:
 Routing (rekomenduojama su react-router-dom)
 Minimalūs route’ai:
 / – Home
@@ -40,21 +41,24 @@ Minimalūs route’ai:
 /meal/:id – Meal details
 /random – Random meal (arba Random sekcija Home puslapyje)
  
-HTML5 semantika ir prieinamumas:
+4. HTML5 semantika ir prieinamumas:
 Naudok semantinius elementus: <header> <nav> <main> <section> <article> <footer>
 Formoms: label + input su htmlFor/id
 Mygtukams: aiškūs aria-label, jei reikia
 Kortelės kaip <article> (rekomenduojama)
 Klaviatūros navigacija (tab) turi veikti
 
-Stilius ir responsyvus dizainas:
+5. Stilius ir responsyvus dizainas:
 Dizainas pagal Figma (spalvos, tarpai, tipografija, grid).
 Responsive:
 mobile first arba su media query
 kortelės išsidėsto 1 stulpeliu mobile, 2–4 desktop (pagal plotį)
 vaizdai prisitaiko (max-width: 100%)
  
-Error handling:
+6. Error handling:
 Jei API grąžina meals: null → rodyti “No meals found”.
 Network error → rodyti “Something went wrong”.
 Loading būsena (spinner / skeleton).
+
+Bootstrap buvo naudojamas kaip UI pagalbinė biblioteka (grid, responsive layout, spacing), o visa aplikacijos logika, API integracija, 
+routing ir state management yra įgyvendinti savarankiškai su React.

@@ -1,27 +1,13 @@
-// import Search from "../search/Search.jsx";
-// import Movies from "../movies/Movies.jsx";
-// const Home = () => {
-//     return (
-//         <main>
-//             <Search/>
-//             <Movies/>
-//         </main>
-//     )
-// } export default Home;
-
 import Search from "../search/Search.jsx";
 import Categories from "../categories/Categories.jsx";
-
+import Header from "../layout/Header.jsx";
+import FeaturedMeals from "../layout/FeaturedMeals.jsx";
+// PAGE LAYOUT SUDELIOTOJAS :)
 const Home = ()=>{
     return(
-        <main className="container">
-            <header className="hero">
-                <div className="hero-left">
-                    <h1>Cooking Made Fun and Easy</h1>
-                    <p>Search meals by name, ingredient, category, or area.</p>
-                    <Search/>
-                </div>
-            </header>
+        <main>
+            <Header />
+            <FeaturedMeals/>
 
             <section className="section">
                 <div className="section-head">

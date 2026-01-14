@@ -94,3 +94,4 @@ img{max-width:100%;display:block}
 @media (min-width: 1024px){
   .grid{grid-template-columns:repeat(3,minmax(0,1fr))}
 }
+.hero-image-placeholder{width: 100%; min-height: 360px; background: radial-gradient(circle at 30% 20%, #fff7ed, #f3f4f6); }

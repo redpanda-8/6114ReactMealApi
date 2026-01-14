@@ -5,7 +5,7 @@ import getMeal from "../../services/getMeal.js";
 const Meal = () => {
     const { id } = useParams();
     const { isLoading, error, data: mealData } = getMeal(`/lookup.php?i=${id}`);
-
+    //for spinner - show kol krauna
     if (isLoading) return <div className="loading"></div>;
 
     if (error.show) {
@@ -28,13 +28,12 @@ const Meal = () => {
         </main>
         );
     }
-
     // ingredientai 1..20
     const ingredients = [];
     for (let i = 1; i <= 20; i++) {
         const ing = meal[`strIngredient${i}`];
         const meas = meal[`strMeasure${i}`];
-        //kdl puse nerodo :( pavargau -_-
+
         if (ing && ing.trim()) {
         ingredients.push(`${meas ? meas.trim() : ""} ${ing.trim()}`.trim());
         }
