@@ -12,18 +12,17 @@ const SearchResults =()=> {
         <main className="container py-4">
             <Link to="/" className="btn"> 🔙Back</Link>
             <h1 className="fw-bold mb-3">Search Results</h1>
-            <Search />
 
-            <section className="mt-4">
-                <div className="d-flex align-items-end justify-content-between flex-wrap gap-2 mb-2">
-                    <div>
-                        <h2 className="h5 fw-bold mb-0">Categories</h2>
-                        <p className="text-secondary mb-0">Quick filter by category</p>
+            <section className="search-filters">
+                <Search />
+                <div className="categories-wrap">
+                    <div className="categories-head">
+                        <h3 className="mb-0">Categories</h3>
+                        <p className="text-muted mb-0">Quick filter by category</p>
                     </div>
+                    <Categories />
                 </div>
-                <Categories />
             </section>
-
             {/* Results grid */}
             <section className="mt-4">
                 <Meals />
