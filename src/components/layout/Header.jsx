@@ -22,8 +22,8 @@ const Header =()=> {
         <header className="py-4">
             <nav className="navbar navbar-expand-lg bg-white">
                 <div className="container">
-                    <Link to="/" className="navbar-brand fw-bold">Recipedia</Link>
-                    <div className="d-flex gap-5">
+                    <Link to="/" className="navbar-brand fw-bold fs-3 txtgreen">🍕Recipedia</Link>
+                    <div className="d-flex gap-5 fw-bold">
                         <NavLink to="/" className="nav-link">Home</NavLink>
                         <NavLink to="/search?q=chicken&type=name" className="nav-link">Recipe</NavLink>
                         <a className="nav-link" href="#community">Community</a>
@@ -31,8 +31,8 @@ const Header =()=> {
                     </div>
                     
                     <div className="d-flex gap-2 ms-5">
-                        <Link className="btn btn-light">🔍</Link>
-                        <button className="btn btn-light">👤</button>
+                        <Link className="btn">🔍</Link>
+                        <button className="btn">👤</button>
                     </div>
                 </div>
             </nav>

@@ -30,9 +30,9 @@ const CommunitySection =()=> {
     return (
     <section id="community" className="my-5" aria-label="Community posts">
         <div className="container">
-            <h2 className="text-center fw-bold mb-4">From Our Community</h2>
+            <h2 className="text-center fw-bold mb-4">🥨From Our Community🥨</h2>
 
-            <div className="row g-4">
+            <div className="row g-5">
                 {posts.map((p) => (
                     <div className="col-12 col-lg-6" key={p.id}>
                         <article className="community-card bg-white rounded-4 shadow-sm p-4 h-100">
@@ -40,7 +40,7 @@ const CommunitySection =()=> {
                                 
                                 <div className="community-avatar" aria-hidden="true"></div>
                                 <div>
-                                    <h3 className="h6 fw-bold mb-0">{p.title}</h3>
+                                    <h3 className="h4 fw-bold mb-0">{p.title}</h3>
                                     <p className="text-secondary small mb-0">{p.author}</p>
                                 </div>
                             </div>
@@ -49,12 +49,12 @@ const CommunitySection =()=> {
                             <p className="text-secondary community-text mt-2"> “{p.text}” </p>
                             <img src={p.img} alt={p.title} className="community-img rounded-4 mt-2" />
 
-                            <div className="d-flex align-items-center gap-3 mt-3">
-                                <button type="button" className="btn btn-light btn-sm" aria-label={`Like ${p.title}`}>
+                            <div className="d-flex align-items-center gap-3 mt-4">
+                                <button type="button" className="btn btn-light fw-bold" aria-label={`Like ${p.title}`}>
                                     🧡 {p.likes}
                                 </button>
-                                <button type="button" className="btn btn-light btn-sm" aria-label={`Share ${p.title}`}>
-                                    🔗 Share
+                                <button type="button" className="btn btn-light fw-bold" aria-label={`Share ${p.title}`}>
+                                    🍒 Share
                                 </button>
                             </div>
                         </article>

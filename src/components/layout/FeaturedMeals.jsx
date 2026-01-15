@@ -31,7 +31,7 @@ const FeaturedMeals =()=> {
             <div className="row g-4">
                 {featured.map((m, idx) => (
                     <div className="col-12 col-sm-6 col-lg-4" key={idx}>
-                    <Link to={`/meal/${m.idMeal}`} className="text-decoration-none">
+                    <Link to={`/meal/${m.idMeal}`} className="text-decoration-none fw-bold">
                         <article className="card h-100 shadow-sm rounded-4 overflow-hidden">
                         <img
                             src={m.strMealThumb}

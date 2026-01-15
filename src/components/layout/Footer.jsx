@@ -7,42 +7,42 @@ const Footer = () => {
             <div className="container">
                 <div className="row g-4 align-items-start">
                     <div className="col-12 col-lg-3">
-                        <Link to="/" className="fw-bold fs-5 text-decoration-none">Recipedia</Link>
+                        <Link to="/" className="fw-bold fs-3 text-decoration-none txtgreen">🍕Recipedia</Link>
                     </div>
 
                     <nav className="col-6 col-md-3 col-lg-2" aria-label="Footer menu">
-                        <h3 className="h6 fw-bold mb-3">Menu</h3>
+                        <h4 className="fw-bold mb-3">Menu</h4>
                         <ul className="list-unstyled footer-list">
-                        <li><Link to="/" className="footer-link">Home</Link></li>
-                        <li><Link to="/search?q=chicken&type=name" className="footer-link">Recipe</Link></li>
-                        <li><a href="#community" className="footer-link">Community</a></li>
-                        <li><a href="#about" className="footer-link">About Us</a></li>
+                        <li><Link to="/" className="footer-link  text-decoration-none">Home</Link></li>
+                        <li><Link to="/search?q=chicken&type=name" className="footer-link  text-decoration-none">Recipe</Link></li>
+                        <li><a href="#community" className="footer-link  text-decoration-none">Community</a></li>
+                        <li><a href="#about" className="footer-link  text-decoration-none">About Us</a></li>
                         </ul>
                     </nav>
 
-                    <nav className="col-6 col-md-3 col-lg-2" aria-label="Footer categories">
-                        <h3 className="h6 fw-bold mb-3">Categories</h3>
+                    <nav className="col-6 col-md-3 col-lg-2 " aria-label="Footer categories">
+                        <h4 className="fw-bold mb-3">Categories</h4>
                         <ul className="list-unstyled footer-list">
-                        <li><Link to="/search?q=Breakfast&type=category" className="footer-link">Breakfast</Link></li>
-                        <li><Link to="/search?q=Chicken&type=category" className="footer-link">Lunch</Link></li>
-                        <li><Link to="/search?q=Dessert&type=category" className="footer-link">Dinner</Link></li>
-                        <li><Link to="/search?q=Seafood&type=category" className="footer-link">Dessert</Link></li>
-                        <li><Link to="/search?q=Vegan&type=category" className="footer-link">Drink</Link></li>
+                        <li><Link to="/search?q=Breakfast&type=category" className="footer-link  text-decoration-none">Breakfast</Link></li>
+                        <li><Link to="/search?q=Chicken&type=category" className="footer-link  text-decoration-none">Lunch</Link></li>
+                        <li><Link to="/search?q=Dessert&type=category" className="footer-link  text-decoration-none">Dinner</Link></li>
+                        <li><Link to="/search?q=Seafood&type=category" className="footer-link  text-decoration-none">Dessert</Link></li>
+                        <li><Link to="/search?q=Vegan&type=category" className="footer-link  text-decoration-none">Drink</Link></li>
                         </ul>
                     </nav>
 
                     <nav className="col-6 col-md-3 col-lg-2" aria-label="Footer social links">
-                        <h3 className="h6 fw-bold mb-3">Social</h3>
+                        <h4 className="fw-bold mb-3">Social</h4>
                         <ul className="list-unstyled footer-list">
-                        <li><a className="footer-link" href="#" aria-label="Instagram">Instagram</a></li>
-                        <li><a className="footer-link" href="#" aria-label="Twitter">Twitter</a></li>
-                        <li><a className="footer-link" href="#" aria-label="Youtube">Youtube</a></li>
-                        <li><a className="footer-link" href="#" aria-label="Facebook">Facebook</a></li>
+                        <li><a className="footer-link  text-decoration-none" href="#" aria-label="Instagram">Instagram</a></li>
+                        <li><a className="footer-link  text-decoration-none" href="#" aria-label="Twitter">Twitter</a></li>
+                        <li><a className="footer-link  text-decoration-none" href="#" aria-label="Youtube">Youtube</a></li>
+                        <li><a className="footer-link  text-decoration-none" href="#" aria-label="Facebook">Facebook</a></li>
                         </ul>
                     </nav>
 
                     <div className="col-12 col-md-9 col-lg-3">
-                        <h3 className="h6 fw-bold mb-3">Sign up for our newsletter</h3>
+                        <h4 className="fw-bold mb-3">Sign up for our newsletter</h4>
 
                         <form className="d-flex gap-2 flex-wrap" aria-label="Newsletter form">
                             <label className="sr-only" htmlFor="newsletterEmail">Your Email Address</label>
