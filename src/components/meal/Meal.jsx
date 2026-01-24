@@ -48,32 +48,41 @@ const Meal = () => {
         <main className="container">
             <Link to="/search" className="btn btn-ghost">← back to results</Link>
 
-            <section className="meal-details">
-                <img src={meal.strMealThumb} alt={meal.strMeal} className="meal-img" />
+            <section className="row g-4 align-items-start meal-details">
+                <div className="col-12 col-lg-5 col-xl-4">
+                    <img src={meal.strMealThumb} alt={meal.strMeal} className="img-fluid rounded-4 shadow-sm meal-img" />
+                </div>
 
-                <div className="meal-info">
-                    <h1>{meal.strMeal}</h1>
-                    <p className="meta">
-                    <span>{meal.strCategory}</span> • <span>{meal.strArea}</span>
+                <div className="col-12 col-lg-7 col-xl-8">
+                    <h1 className="display-6 fw-bold mb-2">{meal.strMeal}</h1>
+                    <p className="text-secondary mb-3">
+                        <span className="fw-semibold">{meal.strCategory}</span> •{" "}
+                        <span className="fw-semibold">{meal.strArea}</span>
                     </p>
 
                     {tags.length > 0 && (
-                        <div className="tags">
+                        <div className="d-flex flex-wrap gap-2 mb-4">
                         {tags.map((t) => (
-                            <span className="tag" key={t}>{t}</span>
+                            <span className="badge rounded-pill text-bg-light border" key={t}> {t} </span>
                         ))}
                         </div>
                     )}
 
-                    <h2>Ingredients</h2>
-                    <ul className="ingredients">
-                        {ingredients.map((x, idx) => (
-                        <li key={idx}>{x}</li>
-                        ))}
-                    </ul>
+                    <div className="row g-4">
+                        <div className="col-12 col-xl-5">
+                            <h2 className="h5 fw-bold mb-2">Ingredients</h2>
+                            <ul className="ps-3 mb-0">
+                                {ingredients.map((x, idx) => ( 
+                                    <li key={idx} className="mb-1"> {x} </li>
+                                ))}
+                            </ul>
+                        </div>
 
-                    <h2>Instructions</h2>
-                    <p className="instructions">{meal.strInstructions}</p>
+                        <div className="col-12 col-xl-7">
+                            <h2 className="h5 fw-bold mb-2">Instructions</h2>
+                            <p className="mb-0 meal-instructions">{meal.strInstructions}</p>
+                        </div>
+                    </div>
                 </div>
             </section>
         </main>

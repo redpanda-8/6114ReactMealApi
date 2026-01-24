@@ -138,3 +138,15 @@ img { max-width: 100%; display: block; }
   box-shadow: 0 10px 16px rgba(0,0,0,0.08);
   transform: translateY(-1px);
 }
+/* ---------------------------------------------------  vidinio meniu patiekals  ---------------------------------------------- */
+.meal-img{ width: 100%; max-height: 420px; object-fit: cover; }
+
+@media (min-width: 992px){
+  .meal-img{
+    max-height: 520px;
+  }
+}
+.meal-instructions{
+  white-space: pre-line; /* kad instrukcijos nbtu viena eilute */
+  line-height: 1.7;
+}
