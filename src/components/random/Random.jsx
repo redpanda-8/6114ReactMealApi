@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import getMeal from "../../services/getMeal.js";
+import BackButton from "../search/BackButton.jsx";
 
 const Random = () => {
     const { isLoading, error, data } = getMeal("/random.php");
@@ -9,7 +10,7 @@ const Random = () => {
         return (
         <main className="container">
             <div className="error">{error.msg}</div>
-            <Link to="/" className="btn">back</Link>
+            <BackButton to="/" />
         </main>
         );
     }

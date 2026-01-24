@@ -4,6 +4,7 @@
 //useParams() pasiima id,  kviečia lookup.php?i=...,  rodo ingredientus + kiekius + instructions + tags
 import { useParams, Link } from "react-router-dom";
 import getMeal from "../../services/getMeal.js";
+import BackButton from "../search/BackButton.jsx";
 
 const Meal = () => {
     const { id } = useParams();
@@ -16,7 +17,7 @@ const Meal = () => {
         <main className="container">
           <div className="page-error">
             <h1>{error.msg}</h1>
-            <Link to="/" className="btn">back</Link>
+            <BackButton to="/" />
           </div>
         </main>
         );
@@ -27,7 +28,7 @@ const Meal = () => {
         return (
         <main className="container">
             <p className="no-results">No meal found.</p>
-            <Link to="/" className="btn">back</Link>
+            <BackButton to="/" />
         </main>
         );
     }
@@ -46,7 +47,7 @@ const Meal = () => {
 
     return (
         <main className="container">
-            <Link to="/search" className="btn btn-ghost">← back to results</Link>
+           <BackButton to="/search" />
 
             <section className="row g-4 align-items-start meal-details">
                 <div className="col-12 col-lg-5 col-xl-4">
@@ -79,8 +80,8 @@ const Meal = () => {
                         </div>
 
                         <div className="col-12 col-xl-7">
-                            <h2 className="h5 fw-bold mb-2">Instructions</h2>
-                            <p className="mb-0 meal-instructions">{meal.strInstructions}</p>
+                            <h2 className="h5 fw-bold mb-3">Instructions</h2>
+                            <p className="meal-instructions mb-5"> {meal.strInstructions} </p>
                         </div>
                     </div>
                 </div>

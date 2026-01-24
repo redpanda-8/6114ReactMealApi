@@ -6,6 +6,7 @@
 import { Link, useSearchParams } from "react-router-dom";
 import { useEffect } from "react";
 import { useGlobalContext } from "../../context.jsx";
+import BackButton from "../search/BackButton.jsx";
 //Routes /search element={<Meals>} mechanizmas ?q=chicken&type=name
 const Meals =()=> {
     const [params] =useSearchParams();
@@ -23,14 +24,16 @@ const Meals =()=> {
     if(mealsError.show){
         return(
             <main className="container">
-              <h2 className="page-title">Search Results</h2>
-              <div className="error">{mealsError.msg}</div>
+                <BackButton to="/" />
+                <h2 className="page-title">Search Results</h2>
+                <div className="error">{mealsError.msg}</div>
             </main>
         );
     }
     if(!meals || meals.length === 0){
         return(
             <main className="container">
+                <BackButton to="/" />
               <h2 className="page-title">Search Results</h2>
               <p className="no-results">No meals found.</p>
             </main>
