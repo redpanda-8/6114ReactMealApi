@@ -65,30 +65,15 @@ https://www.themealdb.com/api.php
 2️⃣ Install dependencies              npm install
 3️⃣ Run the project                   npm run dev
 Open in browser: http://localhost:5173
-src/
-├── components/
-│   ├── meal/
-│   ├── meals/
-│   ├── search/
-│   └── random/
-├── services/
-├── context.jsx
-├── index.css
-└── main.jsx
 
 🧠 What I Learned
 
 Working with REST APIs in React
-
 Managing global state with Context API
-
 Responsive UI with Bootstrap grid system
-
 Conditional rendering & error handling
-
 Structuring a real-world React project
 
-# --------------------------------------------------------------------------------------------------------------------------
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
