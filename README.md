@@ -61,10 +61,10 @@ https://www.themealdb.com/api.php
 
 ## 🚀 Getting Started
 
-1️⃣ Clone the repository              git clone https://github.com/redpanda-8/6114ReactMealApi.git
-2️⃣ Install dependencies              npm install
-3️⃣ Run the project                   npm run dev
-Open in browser: http://localhost:5173
+#### 1️⃣ Clone the repository              git clone https://github.com/redpanda-8/6114ReactMealApi.git
+#### 2️⃣ Install dependencies              npm install
+#### 3️⃣ Run the project                   npm run dev
+#### Open in browser:                     http://localhost:5173
 
 🧠 What I Learned
 
