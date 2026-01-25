@@ -1,56 +1,47 @@
-# 🍕 Recipedia — React Meal API App
+# 🍕 Recipedia — Recipe Search App (React Meal API)
 
 ![React](https://img.shields.io/badge/React-18-blue)
 ![Vite](https://img.shields.io/badge/Vite-5-purple)
 ![API](https://img.shields.io/badge/API-TheMealDB-orange)
 ![Status](https://img.shields.io/badge/status-finished-success)
 
-A modern and responsive recipe search application built with **React + Vite**, using the public **TheMealDB API**.  
-Users can search meals, filter by categories, explore random recipes, and view detailed cooking instructions.
+A modern and responsive recipe search web application built with **React + Vite**, using the public **TheMealDB API**.  
+Users can search meals, filter by name, categories, ingredients, explore random recipes, and view detailed cooking instructions.
 
 ---
-
 ## ✨ Features
-
 - 🔍 Search meals by name, ingredient, category
 - 🏷️ Filter by category (Chicken, Pasta, Seafood, etc.)
 - 🎲 Random meal generator
-- 📋 Detailed meal page (ingredients + instructions)
+- 📋 Detailed meal page (ingredients list + instructions)
 - 📱 Fully responsive (mobile / tablet / desktop)
 - ♿ Accessible-friendly UI (ARIA labels, screen-reader helpers)
 
----
-
 ## 🧰 Tech Stack
 
-- **React 18**
 - **Vite**
+- **React 18**
 - **React Router**
 - **Context API**
 - **Bootstrap 5**
 - **TheMealDB REST API**
 
----
-
 ## 🔗 API Used
+Data is fetched from the public API: https://www.themealdb.com/api.php
 
-Data is fetched from the public API:
-https://www.themealdb.com/api.php
+### Endpoints used (GET method):
+- `/search.php?s=chicken` - Search by name
+- `/search.php?f=a`       - Search by first letter
+- `/filter.php?i=Chicken` - Filter by ingredient
+- `filter.php?a=Italian`  - Filter by area
+- `/filter.php?c=Seafood` - Filter by category
+- `/lookup.php?i=52772`   - Lookup meal by ID
+- `/random.php`           - Random meal
 
-### Endpoints used:
-- `/search.php?s=chicken`
-- `/filter.php?c=Seafood`
-- `/lookup.php?i=52772`
-- `/random.php`
-
-## 🖼️ Screenshots
-
-### Home Page
-![Home](./screenshots/home1.png)
-### Search Results
-![Search](./screenshots/search.png)
-### Meal Details
-![Meal Details](./screenshots/mealDetails.png)
+## 🧭 Pages / Routes
+| `/`         | Home page with featured meals |
+| `/search`   | Search & filter meals         |
+| `/meal/:id` | Single meal details page      |
 
 ## 🚀 Getting Started
 
@@ -62,10 +53,21 @@ https://www.themealdb.com/api.php
 ## 🧠 What I Learned
 
 1. Working with REST APIs in React
-2. Managing global state with Context API
-3. Responsive UI with Bootstrap grid system
-4. Conditional rendering & error handling
-5. Structuring a real-world React project
+2. React Router navigation
+3. Managing global state with Context API
+4. Component-based UI structure
+5. Responsive UI with Bootstrap grid system
+6. Conditional rendering & error handling
+
+## 🖼️ Screenshots
+### Home Page
+![Home](./screenshots/home1.png)
+### Search Results
+![Search](./screenshots/search.png)
+### Search Results (Mobile)
+![Search Mobile](./screenshots/searchMobile.png)
+### Meal Details
+![Meal Details](./screenshots/mealDetails.png)
 
 # React + Vite
 
